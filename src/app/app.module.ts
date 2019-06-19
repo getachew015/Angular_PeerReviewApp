@@ -14,7 +14,7 @@ import { FacultyComponent } from './faculty/faculty.component';
 import { WorkPackageComponent } from './work-package/work-package.component';
 import { TraineeComponent } from './trainee/trainee.component';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
@@ -45,8 +45,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFireDatabaseModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

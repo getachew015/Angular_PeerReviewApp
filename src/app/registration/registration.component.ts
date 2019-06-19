@@ -21,7 +21,6 @@ export class RegistrationComponent implements OnInit {
 
   }
   onSubmit(form: NgForm){
-    console.log(form.value);
     this.user = new UserModel(this.userId,form.value.name, form.value.email, form.value.password, form.value.role);
     this.userService.saveUserData(this.user);
     form.reset();

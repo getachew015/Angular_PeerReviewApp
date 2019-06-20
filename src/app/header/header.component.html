@@ -1,0 +1,86 @@
+<nav class="navbar navbar-default" >
+  <div class="container-fluid">
+    <div class="navbar-header" *ngIf="userRole==='default'" >
+      <h3><a href="#" class="navbar-brand">Peer Review</a></h3>
+    </div>
+    <div class="collapse navbar-collapse">
+
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-0 col-md-offset-0" *ngIf="userRole === 'Faculty'" >
+          <ul class="nav nav-tabs">
+            <li role="presentation"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+              <a routerLink="/faculty">Home</a>
+            </li>
+            <li role="presentation"
+                routerLinkActive="active">
+              <a routerLink="workPackage">Work Package</a>
+            </li>
+            <li role="presentation"
+                routerLinkActive="active">
+              <a [routerLink]="['/batch']">Batch</a>
+            </li>
+            <!-- <li role="presentation"
+                routerLinkActive="active">
+              <a [routerLink]="['']">Reports</a>
+            </li> -->
+          </ul>
+      </div> 
+
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-0 col-md-offset-0" *ngIf="userRole === 'Trainee'" >
+        <ul class="nav nav-tabs">
+          <li role="presentation"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/faculty">Home</a>
+          </li>
+          <li role="presentation"
+              routerLinkActive="active">
+            <a routerLink="workPackage">My Assignment</a>
+          </li>
+          <li role="presentation"
+              routerLinkActive="active">
+            <a [routerLink]="['/batch']">Review</a>
+          </li>
+          <!-- <li role="presentation"
+              routerLinkActive="active">
+            <a [routerLink]="['']">Reports</a>
+          </li> -->
+        </ul>
+      </div> 
+    
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-0 col-md-offset-0" *ngIf="userRole === 'Administrator'" >
+        <ul class="nav nav-tabs">
+          <li role="presentation"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/faculty">Home</a>
+          </li>
+          <li role="presentation"
+              routerLinkActive="active">
+            <a routerLink="registerUser">Register User</a>
+          </li>
+          <li role="presentation"
+              routerLinkActive="active">
+            <a [routerLink]="['/batch']">Delete User</a>
+          </li>
+          <!-- <li role="presentation"
+              routerLinkActive="active">
+            <a [routerLink]="['']">Reports</a>
+          </li> -->
+        </ul>
+      </div> 
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" appDropdown>
+          <a style="cursor: pointer;" class="dropdown-toggle" role="button">My Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;" routerLink="/login" (click) = "onClick()">Profile</a></li>
+            <li><a style="cursor: pointer;" routerLink="/login" (click) = "onClick()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
